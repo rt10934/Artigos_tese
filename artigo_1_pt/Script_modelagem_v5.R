@@ -731,7 +731,7 @@ cc_Inverno <-tabe2 %>%
                   background_color = "gray99",
                   fill_opacity = 0.03,
                   polygon = TRUE)+  
-  labs(x = "", y = "", fill = "", title = "Inverno")+
+  labs(x = "", y = "", fill = "", title = "Winter")+
   theme(legend.position = "none",
         plot.title = element_text(hjust = 0.5, size = 10, face = "bold"))+
   coord_equal()+
@@ -754,7 +754,7 @@ cc_Verao <-tabe2 %>%
             background_color = "gray99",
             fill_opacity = 0.03,
             polygon = TRUE)+  
-  labs(x = "", y = "", fill = "", title = "Verão")+
+  labs(x = "", y = "", fill = "", title = "Summer")+
   theme(legend.position = "none",
         plot.title = element_text(hjust = 0.5, size = 10, face = "bold"))+
   coord_equal()
@@ -771,7 +771,7 @@ cc_Primavera <-tabe2 %>%
             background_color = "gray99",
             fill_opacity = 0.03,
             polygon = TRUE)+  
-  labs(x = "", y = "", fill = "", title = "Primavera")+
+  labs(x = "", y = "", fill = "", title = "Spring")+
   theme(legend.position = "none",
         plot.title = element_text(hjust = 0.5, size = 10, face = "bold"))+
   coord_equal()
@@ -788,7 +788,7 @@ cc_Outono <-tabe2 %>%
             background_color = "gray99",
             fill_opacity = 0.03,
             polygon = TRUE)+  
-  labs(x = "", y = "", fill = "", title = "Outono")+
+  labs(x = "", y = "", fill = "", title = "Autumn")+
   theme(legend.position = "none",
         plot.title = element_text(hjust = 0.5, size = 10, face = "bold"))+
   coord_equal()
@@ -1255,6 +1255,6 @@ figuras_brasil <- ggpubr::ggarrange(CC_estacao, me_estacao, mae_estacao, rmse_es
                                     ncol = 1, nrow = 5, common.legend = T ,legend = c("bottom"))
 
 
-ggsave("results/figura_8.png", plot = figuras_brasil,
+ggsave("results/figura_8_en.png", plot = figuras_brasil,
        width = 11, height = 16, dpi = 300)
 

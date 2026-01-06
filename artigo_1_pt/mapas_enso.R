@@ -116,7 +116,7 @@ elnino_abaixo_gr <- ggplot() +
   ggtitle("El niño")+
   xlab("") +    ylab("") +
   geom_raster(data = elnino_abaixo_df, aes(x = lon, y = lat, fill = value), show.legend = TRUE) +
-  scale_fill_manual(values = colors1, name = "Precipitação \n abaixo", labels = values, drop = FALSE,
+  scale_fill_manual(values = colors1, name = "below-average \n precipitation", labels = values, drop = FALSE,
                     guide = guide_legend(nrow = 1)) +
   geom_sf(data = bra_st, fill = "transparent", color = "black", size = 0.5) +
   theme_minimal()+
@@ -127,7 +127,7 @@ lanina_abaixo_gr <- ggplot() +
   xlab("") +    ylab("") +
   ggtitle("La niña")+
   geom_raster(data = lanina_abaixo_df, aes(x = lon, y = lat, fill = value), show.legend = TRUE) +
-  scale_fill_manual(values = colors1, name = "Precipitação \n abaixo", labels = values, drop = FALSE,
+  scale_fill_manual(values = colors1, name = "below-average \n precipitation", labels = values, drop = FALSE,
                     guide = guide_legend(nrow = 1)) +
   geom_sf(data = bra_st, fill = "transparent", color = "black", size = 0.5) +
   theme_minimal()+
@@ -138,7 +138,7 @@ elnino_acima_gr <- ggplot() +
   xlab("") +    ylab("") +
   ggtitle("El niño")+
   geom_raster(data = elnino_acima_df, aes(x = lon, y = lat, fill = value), show.legend = TRUE) +
-  scale_fill_manual(values = colors2, name = "Precipitação \n acima", labels = values, drop = FALSE,
+  scale_fill_manual(values = colors2, name = "above-average \n precipitation", labels = values, drop = FALSE,
                     guide = guide_legend(nrow = 1)) +
   geom_sf(data = bra_st, fill = "transparent", color = "black", size = 0.5) +
   theme_minimal()+
@@ -149,7 +149,7 @@ lanina_acima_gf <- ggplot() +
   xlab("") +    ylab("") +
   ggtitle("La niña")+
   geom_raster(data = lanina_acima_df, aes(x = lon, y = lat, fill = value), show.legend = TRUE) +
-  scale_fill_manual(values = colors2, name = "Precipitação \n acima", labels = values, drop = FALSE,
+  scale_fill_manual(values = colors2, name = "above-average \n precipitation", labels = values, drop = FALSE,
                     guide = guide_legend(nrow = 1)) +
   geom_sf(data = bra_st, fill = "transparent", color = "black", size = 0.5) +
   theme_minimal()+
@@ -168,6 +168,6 @@ grafico2 <- ggpubr::ggarrange(elnino_acima_gr, lanina_acima_gf, ncol = 2,nrow = 
 grafico3 <- ggpubr::ggarrange(grafico1, grafico2, ncol = 1,nrow = 2,common.legend = F,
                               legend = c("bottom") )
 
-ggsave("results/Figura_2.png", plot = grafico3,
+ggsave("results/Figura_2_en.png", plot = grafico3,
        width = 13, height = 13.5, dpi = 300)
 

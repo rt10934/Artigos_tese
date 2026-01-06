@@ -293,7 +293,7 @@ pd_1 <-tabe6 %>%
                   background_color = "gray99",
                   fill_opacity = 0.03,
                   polygon = TRUE)+  
-  labs(x = "", y = "", fill = "", title = "1 mm/dia")+
+  labs(x = "", y = "", fill = "", title = "1 mm/day")+
   theme(legend.position = "bottom",
         plot.title = element_text(hjust = 0.5, size = 10, face = "bold"))+
   coord_equal()+
@@ -320,7 +320,7 @@ pd_5 <-tabe6 %>%
                   background_color = "gray99",
                   fill_opacity = 0.03,
                   polygon = TRUE)+  
-  labs(x = "", y = "", fill = "", title = "5 mm/dia")+
+  labs(x = "", y = "", fill = "", title = "5 mm/day")+
   theme(legend.position = "bottom",
         plot.title = element_text(hjust = 0.5, size = 10, face = "bold"))+
   coord_equal()+
@@ -344,7 +344,7 @@ pd_10 <-tabe6 %>%
                   background_color = "gray99",
                   fill_opacity = 0.03,
                   polygon = TRUE)+  
-  labs(x = "", y = "", fill = "", title = "10 mm/dia")+
+  labs(x = "", y = "", fill = "", title = "10 mm/day")+
   theme(legend.position = "bottom",
         plot.title = element_text(hjust = 0.5, size = 10, face = "bold"))+
   coord_equal()+
@@ -368,7 +368,7 @@ pd_20 <-tabe6 %>%
                   background_color = "gray99",
                   fill_opacity = 0.03,
                   polygon = TRUE)+  
-  labs(x = "", y = "", fill = "", title = "20 mm/dia")+
+  labs(x = "", y = "", fill = "", title = "20 mm/day")+
   theme(legend.position = "bottom",
         plot.title = element_text(hjust = 0.5, size = 10, face = "bold"))+
   coord_equal()+
@@ -382,5 +382,5 @@ pd_20 <-tabe6 %>%
 pd_estacao <- ggpubr::ggarrange(pd_1, pd_5, pd_10, pd_20,
                                 ncol = 4, nrow = 1, common.legend = T ,legend = c("bottom"))
 
-ggsave("results/figuras_limiar.png", plot = pd_estacao,
+ggsave("results/figuras_9_en.png", plot = pd_estacao,
        width = 11, height = 4, dpi = 300)

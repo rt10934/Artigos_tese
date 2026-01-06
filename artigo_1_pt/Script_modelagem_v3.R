@@ -375,10 +375,27 @@ Base_Mapa_1 <- dplyr::bind_rows(Base_Mapa_bioma, Base_Mapa_regiao)
 Base_Mapa_1 <- Base_Mapa_1 |>
   dplyr::mutate(CHAVE = ifelse(CHAVE=="Centro Oeste", "Centro-Oeste",CHAVE))
 # mantendo na ordem:
-Base_Mapa_1$CHAVE <- factor(Base_Mapa_1$CHAVE, 
-                            levels = c("Amazônia", "Caatinga", "Cerrado", "Mata Atlântica",
-                                       "Pampa", "Pantanal", "Centro-Oeste", "Nordeste",
-                                       "Norte", "Sudeste", "Sul"))
+Base_Mapa_1$CHAVE <- Base_Mapa_1$CHAVE %>%
+  dplyr::recode(
+    "Amazônia"       = "Amazon",
+    "Caatinga"       = "Caatinga",
+    "Cerrado"        = "Cerrado",
+    "Mata Atlântica" = "Atlantic Forest",
+    "Pampa"          = "Pampa",
+    "Pantanal"       = "Pantanal",
+    "Centro-Oeste"   = "Center-West",
+    "Nordeste"       = "Northeast",
+    "Norte"          = "North",
+    "Sudeste"        = "Southeast",
+    "Sul"            = "South"
+  ) %>%
+  factor(
+    levels = c(
+      "Amazon", "Caatinga", "Cerrado", "Atlantic Forest",
+      "Pampa", "Pantanal", "Center-West", "Northeast",
+      "North", "Southeast", "South"
+    )
+  )
 
 # Bottom Right
 CC_fig <- ggplot(Base_Mapa_1, aes(x=CHAVE , y=CC, fill=Metodo)) + 
@@ -458,6 +475,6 @@ figuras_regios <- ggpubr::ggarrange(CC_fig, ME_fig, MAE_fig, RMSE_fig, PD_fig,
                                     ncol = 1, nrow = 5, common.legend = T, legend = c("bottom"),
                                     align = "v", heights = c(1, 1, 1, 1, 1))  # Ajustar proporção de alturas
 
-ggsave("results/figura_7.png", plot = figuras_regios,
+ggsave("results/figura_7_en.png", plot = figuras_regios,
        width = 11, height = 12, dpi = 300)
 

@@ -55,7 +55,7 @@ CHIRPS<-BASE_DATA |>
   ggplot2::ggplot() + ggplot2::geom_sf(ggplot2::aes( fill=Categoria),
                                        color="NA",show.legend = TRUE)+
   ggplot2::ggtitle("CHIRPS")+
-  ggplot2::labs(fill="Precipitação")+
+  ggplot2::labs(fill="precipitation")+
   ggplot2::scale_fill_manual(values = c("#DBDECF","#B6CBAF","#8DB997",
                                         "#5DA786","#2A937F","#117D79",
                                         "#18656F","#1C4D61","#1A3651",
@@ -77,7 +77,7 @@ ERA5<-BASE_DATA |>
   ggplot2::ggplot() + ggplot2::geom_sf(ggplot2::aes( fill=Categoria),
                                        color="NA",show.legend = TRUE)+
   ggplot2::ggtitle("ERA5")+
-  ggplot2::labs(fill="Precipitação")+
+  ggplot2::labs(fill="precipitation")+
   ggplot2::scale_fill_manual(values = c("#DBDECF","#B6CBAF","#8DB997",
                                         "#5DA786","#2A937F","#117D79",
                                         "#18656F","#1C4D61","#1A3651",
@@ -99,7 +99,7 @@ PERSIANN<-BASE_DATA |>
   ggplot2::ggplot() + ggplot2::geom_sf(ggplot2::aes( fill=Categoria),
                                        color="NA",show.legend = TRUE)+
   ggplot2::ggtitle("PERSIANN")+
-  ggplot2::labs(fill="Precipitação")+
+  ggplot2::labs(fill="precipitation")+
   ggplot2::scale_fill_manual(values = c("#DBDECF","#B6CBAF","#8DB997",
                                         "#5DA786","#2A937F","#117D79",
                                         "#18656F","#1C4D61","#1A3651",
@@ -121,7 +121,7 @@ ufes<-BASE_DATA |>
   ggplot2::ggplot() + ggplot2::geom_sf(ggplot2::aes( fill=Categoria),
                                        color="NA",show.legend = TRUE)+
   ggplot2::ggtitle("BR-DWGD")+
-  ggplot2::labs(fill="Precipitação")+
+  ggplot2::labs(fill="precipitation")+
   ggplot2::scale_fill_manual(values = c("#DBDECF","#B6CBAF","#8DB997",
                                         "#5DA786","#2A937F","#117D79",
                                         "#18656F","#1C4D61","#1A3651",
@@ -145,7 +145,7 @@ ERA51 <- ERA5 + custom_theme
 grafico <- ggpubr::ggarrange(ufes1, CHIRPS1, PERSIANN1, ERA51, ncol = 2, nrow = 2,
                              common.legend = T, legend = c("right") )
 
-ggsave("results/figura_4.png", plot = grafico,
+ggsave("results/figura_4_en.png", plot = grafico,
        width = 7.05, height = 5.4, dpi = 300) # so mudar o nome
 #-------------------------------------------------------------------------------
 # tabela com os resultados por regiao ------------------------------------------
