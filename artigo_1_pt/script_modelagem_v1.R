@@ -112,7 +112,7 @@ base_prec <- base_prec |> dplyr::select(-day_of_year)
 summary(base_prec$ME_chirps, na.rm=T)
 
 # salvando nova base de dados:--------------------------------------------------
-hex_grid_sf <- readRDS("C:/Tese/shapefile_18_1.rds") |>
+hex_grid_sf <- readRDS("data_1/shapefile_18_1.rds") |>
   dplyr::rename(ID = CLASE)
 # fltro para hexagonos menores que 10 mil
 # filtrando dados para hexagonos maiores que 10 mil hectares: -----------------
@@ -129,12 +129,12 @@ base_prec <- base_prec %>%
   dplyr::filter(!ID%in%filtro_hexa)
 rm(hex_grid_sf, filtro_hexa)
 
-hexa_defeito <- readRDS("C:/Tese/hexa_defeito.rds")
+hexa_defeito <- readRDS("data_1/hexa_defeito.rds")
 hexa_defeito <- unique(hexa_defeito$ID)
 base_prec<- base_prec |> 
   dplyr::filter(!ID%in%hexa_defeito)
 
 # salvando dados 
-saveRDS(base_prec, file = "C:/Tese/TIFs/base_prec.rds")
+saveRDS(base_prec, file = "data_1/base_prec.rds")
 
 
